@@ -9,16 +9,21 @@ public class Abp {
 		
 	}
 	
+	public boolean ehExterno(No no){
+		return (no.getFilhoEsq() == null && no.getFilhoDir() == null);
+	}
+	
 	public No busca(No no, int num){
 		if(this.ehVazia()){
 			return raiz;
 		}
-			
-		if(no.getValor() >= num)
+		if(no.ehExterno())
+			return no;
+		if(no.getValor() >=num)
 			return busca(no.getFilhoDir(), num);
 		else if(no.getValor() < num)
-			return busca(no.getFilhoEsq(), num);
-		else //(no.getValor() == num)
+			return busca(no.getFilhoDir(), num);
+		else 
 			return no;
 		
 	}

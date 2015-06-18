@@ -19,7 +19,7 @@ public class No {
 	}
 	
 	public boolean ehExterno(){
-		return this.getFilhoEsq() == null && this.getFilhoDir() == null;
+		return this.getFilhoEsq() == null || this.getFilhoDir() == null;
 	}
 
 	public int getValor() {
